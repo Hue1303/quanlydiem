@@ -1,0 +1,132 @@
+/* =================================================================
+   PHẦN 1: GIAO DIỆN CHUNG & LOGIN (GIỮ NGUYÊN CŨ)
+   ================================================================= */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #ecf0f1;
+}
+
+/* Khung bên trái màn hình Login (Màu xanh Amsterdam) */
+.left-pane {
+    -fx-background-color: linear-gradient(to bottom right, #2c3e50, #34495e);
+}
+
+/* Tên trường học */
+.school-name {
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0, 0, 1);
+}
+
+/* Khung trắng chứa form đăng nhập */
+.login-pane {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* Nút Đăng nhập (Màu cam đặc trưng) */
+.button-login {
+    -fx-background-color: #e67e22;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+.button-login:hover {
+    -fx-background-color: #d35400;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+}
+
+/* Thông báo lỗi */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-style: italic;
+}
+
+/* =================================================================
+   PHẦN 2: LÀM ĐẸP CHO GIÁO VIÊN & HỌC SINH (MỚI THÊM)
+   ================================================================= */
+
+/* 1. THANH MENU (TAB PANE) */
+.tab-header-background {
+    -fx-background-color: #2c3e50; /* Xanh đậm đồng bộ với Login */
+}
+
+.tab {
+    -fx-background-color: transparent;
+    -fx-padding: 10px 20px;
+}
+
+.tab:selected {
+    -fx-background-color: #34495e;
+    -fx-background-radius: 5px 5px 0 0;
+    -fx-border-color: transparent transparent #e67e22 transparent; /* Gạch chân màu cam */
+    -fx-border-width: 3px;
+}
+
+.tab-label {
+    -fx-text-fill: #bdc3c7; /* Chữ xám */
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: white; /* Chữ trắng khi chọn */
+}
+
+/* 2. BẢNG DỮ LIỆU (TABLE VIEW) - Đẹp như Excel */
+
+.table-view .column-header-background {
+    -fx-background-color: #ecf0f1; /* Nền xám nhạt (như trong ảnh của Huệ) */
+    -fx-background-radius: 5px 5px 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2c3e50; /* <--- ĐỔI MÀU CHỮ Ở ĐÂY (MÀU XANH ĐEN) */
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Dòng chẵn lẻ đổi màu cho dễ nhìn */
+.table-row-cell:odd { -fx-background-color: #ffffff; }
+.table-row-cell:even { -fx-background-color: #f2f6f8; }
+
+/* Khi di chuột vào dòng */
+.table-row-cell:hover { -fx-background-color: #dbe9f4; }
+
+/* Khi chọn dòng */
+.table-row-cell:filled:focused:selected { -fx-background-color: #e67e22; }
+
+/* 3. Ô NHẬP LIỆU & NÚT THƯỜNG */
+.text-field, .password-field, .date-picker .text-field, .combo-box {
+    -fx-background-radius: 4px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+.text-field:focused {
+    -fx-border-color: #e67e22; /* Viền cam khi nhập */
+    -fx-background-color: white;
+}
+
+/* Nút bấm thường (Thêm/Sửa/Xóa) */
+.button {
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 0, 1);
+}
+.button:hover {
+    -fx-opacity: 0.9;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}

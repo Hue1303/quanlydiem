@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentManagerController">
+    <children>
+        <SplitPane dividerPositions="0.65" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane>
+                    <children>
+                        <VBox spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: white; -fx-padding: 10;">
+                                    <children>
+                                        <Label text="DANH SÁCH HỌC SINH" textFill="#2c3e50"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                        <Region HBox.hgrow="ALWAYS" /> <Label text="Lọc lớp:" />
+                                        <ComboBox fx:id="cbLocLop" prefWidth="120.0" promptText="Tất cả" />
+                                    </children>
+                                </HBox>
+                                <TableView fx:id="tableHocSinh" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colMaHS" prefWidth="80.0" text="Mã HS" />
+                                        <TableColumn fx:id="colHoTen" prefWidth="180.0" text="Họ và Tên" />
+                                        <TableColumn fx:id="colNgaySinh" prefWidth="100.0" text="Ngày Sinh" />
+                                        <TableColumn fx:id="colGioiTinh" prefWidth="70.0" text="Giới Tính" />
+                                        <TableColumn fx:id="colLop" prefWidth="70.0" text="Lớp" />
+                                    </columns>
+                                    <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <AnchorPane style="-fx-background-color: #f8f9fa;">
+                    <children>
+                        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <content>
+                                <VBox spacing="15.0" style="-fx-padding: 20;">
+                                    <children>
+                                        <Label text="THÔNG TIN CHI TIẾT" textFill="#e67e22"><font><Font name="System Bold" size="16.0" /></font></Label>
+                                        <TextField fx:id="txtTimKiem" onKeyReleased="#handleSearch" promptText="🔍 Tìm kiếm nhanh..." style="-fx-background-radius: 20;" />
+                                        <Separator />
+
+                                        <Label text="Mã Học Sinh:" /><TextField fx:id="txtMaHS" promptText="VD: HS001" />
+                                        <Label text="Họ và Tên:" /><TextField fx:id="txtHoTen" promptText="Nguyễn Văn A" />
+                                        <Label text="Ngày Sinh:" /><DatePicker fx:id="dpNgaySinh" maxWidth="1.7976931348623157E308" />
+
+                                        <HBox spacing="10.0">
+                                            <children>
+                                                <VBox HBox.hgrow="ALWAYS"><children><Label text="Giới Tính:" /><TextField fx:id="txtGioiTinh" /></children></VBox>
+                                                <VBox HBox.hgrow="ALWAYS"><children><Label text="Lớp:" /><TextField fx:id="txtMaLop" /></children></VBox>
+                                            </children>
+                                        </HBox>
+
+                                        <Label text="Địa Chỉ:" /><TextField fx:id="txtDiaChi" />
+
+                                        <Separator />
+                                        <Button maxWidth="1.7976931348623157E308" onAction="#handleAdd" style="-fx-background-color: #27ae60;" text="THÊM HỌC SINH" textFill="WHITE" />
+                                        <HBox spacing="10.0">
+                                            <children>
+                                                <Button maxWidth="1.7976931348623157E308" onAction="#handleUpdate" style="-fx-background-color: #f39c12;" text="SỬA" textFill="WHITE" HBox.hgrow="ALWAYS" />
+                                                <Button maxWidth="1.7976931348623157E308" onAction="#handleDelete" style="-fx-background-color: #c0392b;" text="XÓA" textFill="WHITE" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                        <Button maxWidth="1.7976931348623157E308" onAction="#handleReset" style="-fx-background-color: #95a5a6;" text="Làm Mới (Reset)" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

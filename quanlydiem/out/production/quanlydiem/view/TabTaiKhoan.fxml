@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccountController">
+    <children>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="20.0" style="-fx-background-color: #f8f9fa; -fx-padding: 40; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);">
+            <children>
+                <Label text="ĐỔI MẬT KHẨU" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
+                <Label fx:id="lblTaiKhoanGV" text="Tài khoản: ..." textFill="#7f8c8d" />
+                <Separator prefWidth="300.0" />
+                <PasswordField fx:id="txtPassOld" prefHeight="40.0" prefWidth="350.0" promptText="Mật khẩu hiện tại" />
+                <PasswordField fx:id="txtPassNew" prefHeight="40.0" prefWidth="350.0" promptText="Mật khẩu mới" />
+                <PasswordField fx:id="txtPassConfirm" prefHeight="40.0" prefWidth="350.0" promptText="Nhập lại mật khẩu mới" />
+                <Button maxWidth="1.7976931348623157E308" onAction="#handleChangePassword" prefHeight="45.0" style="-fx-background-color: #34495e;" text="CẬP NHẬT MẬT KHẨU" textFill="WHITE" />
+            </children>
+        </VBox>
+    </children>
+</StackPane>

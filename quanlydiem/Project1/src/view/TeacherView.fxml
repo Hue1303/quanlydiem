@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<TabPane prefHeight="650.0" prefWidth="1000.0" stylesheets="@application.css" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="controller.MainTeacherController">
+    <tabs>
+
+        <!-- TAB 1: HỌC SINH -->
+        <Tab fx:id="tabQuanLyHS" text="QUẢN LÝ HỌC SINH">
+            <content>
+                <fx:include source="TabQuanLyHocSinh.fxml"/>
+            </content>
+        </Tab>
+
+        <!-- TAB 2: ĐIỂM SỐ -->
+        <Tab text="NHẬP ĐIỂM SỐ">
+            <content>
+                <fx:include source="TabQuanLyDiem.fxml"/>
+            </content>
+        </Tab>
+
+        <!-- TAB 3: TÀI KHOẢN -->
+        <Tab text="CÀI ĐẶT TÀI KHOẢN">
+            <content>
+                <fx:include source="TabTaiKhoan.fxml"/>
+            </content>
+        </Tab>
+
+        <!-- TAB 4: THỐNG KÊ -->
+        <Tab text="BÁO CÁO THỐNG KÊ">
+            <content>
+                <fx:include source="TabThongKe.fxml"/>
+            </content>
+        </Tab>
+
+    </tabs>
+</TabPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GradeManagerController">
+    <children>
+        <SplitPane dividerPositions="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane>
+                    <children>
+                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #ecf0f1; -fx-padding: 10;">
+                                    <children>
+                                        <Label text="LỚP HỌC:"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                        <ComboBox fx:id="cbLopHoc" prefWidth="120.0" promptText="-- Chọn lớp --" />
+                                        <Label text="MÔN HỌC:"><font><Font name="System Bold" size="14.0" /></font></Label>
+                                        <ComboBox fx:id="cbMonHoc" prefWidth="200.0" promptText="-- Chọn môn --" />
+
+                                        <ComboBox fx:id="cbHocKy" prefWidth="120.0" promptText="Học kỳ 1" />
+
+                                        <Button onAction="#handleLoadDiem" style="-fx-background-color: #2980b9;" text="Tải Danh Sách" textFill="WHITE" />
+                                    </children>
+                                </HBox>
+
+                                <TableView fx:id="tableDiem" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="colDiemMaHS" prefWidth="70.0" text="Mã HS" />
+                                        <TableColumn fx:id="colDiemTen" prefWidth="180.0" text="Họ và Tên" />
+
+                                        <TableColumn fx:id="colDiemMieng" prefWidth="80.0" text="Miệng" />
+                                        <TableColumn fx:id="colDiem15p" prefWidth="90.0" text="15 Phút" />
+                                        <TableColumn fx:id="colDiem1Tiet" prefWidth="90.0" text="1 Tiết" />
+                                        <TableColumn fx:id="colDiemThi" prefWidth="80.0" text="Thi cuối kì" />
+                                        <TableColumn fx:id="colDiemTB" prefWidth="80.0" text="TB Kỳ" />
+
+                                        <TableColumn fx:id="colDiemTBNam" prefWidth="100.0" text="TB Cả Năm" />
+                                    </columns>
+                                    <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane style="-fx-background-color: #fff3cd;">
+                    <children>
+                        <VBox layoutX="20.0" layoutY="20.0" spacing="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                            <children>
+                                <Label text="NHẬP ĐIỂM" textFill="#d35400"><font><Font name="System Bold" size="18.0" /></font></Label>
+                                <Label fx:id="lblTenHSDiem" alignment="CENTER" maxWidth="1.7976931348623157E308" text=" Chọn Học Sinh" textFill="#7f8c8d" wrapText="true"><font><Font name="System Italic" size="14.0" /></font></Label>
+                                <Separator />
+                                <Label text="Điểm Miệng (x1):" /><TextField fx:id="txtDiemMieng" alignment="CENTER" />
+                                <Label text="Điểm 15 Phút (x1):" /><TextField fx:id="txtDiem15p" alignment="CENTER" />
+                                <Label text="Điểm 1 Tiết (x2):" /><TextField fx:id="txtDiem1Tiet" alignment="CENTER" />
+                                <Label text="Điểm Thi (x3):" /><TextField fx:id="txtDiemThi" alignment="CENTER" />
+                                <Region prefHeight="20.0" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#handleSaveDiem" prefHeight="45.0" style="-fx-background-color: #d35400;" text="LƯU ĐIỂM SỐ" textFill="WHITE" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

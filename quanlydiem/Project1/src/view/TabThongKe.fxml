@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StatsController">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <Label text="THỐNG KÊ HỌC LỰC" textFill="#2c3e50"><font><Font name="System Bold" size="24.0" /></font></Label>
+                <HBox alignment="CENTER" spacing="15.0">
+                    <children>
+                        <Label text="Lớp:" />
+                        <ComboBox fx:id="cbLopThongKe" prefWidth="200.0" />
+
+                        <Label text="Học kỳ:" />
+                        <ComboBox fx:id="cbHocKy" prefWidth="100.0" />
+
+                        <Button onAction="#handleVeBieuDo" style="-fx-background-color: #2980b9;" text="Xem Biểu Đồ" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <PieChart fx:id="pieChart" VBox.vgrow="ALWAYS" />
+                <Label fx:id="lblTongSo" text="Tổng số bài thi: 0" textFill="#7f8c8d"><font><Font name="System Italic" size="14.0" /></font></Label>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
